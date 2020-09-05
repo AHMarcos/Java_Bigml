@@ -17,42 +17,42 @@
                 <h:panelGrid  columns="2" style="margin-bottom: 10px">
 
                     <p:outputLabel value="Embarazos"/>
-                    <p:inputText id="Embarazos" value="#{controllerDiabetes.model.embarazos}"/>
+                    <p:inputText id="Embarazos" value="#{controllerDiabetes.data.embarazos}"/>
 
                     <p:outputLabel value="Glucosa"/>
-                    <p:inputText id="Glucosa" value="#{controllerDiabetes.model.glucosa}"/>
+                    <p:inputText id="Glucosa" value="#{controllerDiabetes.data.glucosa}"/>
 
                     <p:outputLabel value="P. sanguinea"/>
-                    <p:inputText id="psanguinea" value="#{controllerDiabetes.model.presion_sanguinea}"/>
+                    <p:inputText id="psanguinea" value="#{controllerDiabetes.data.presion_sanguinea}"/>
 
                     <p:outputLabel value="P. cutaneo"/>
-                    <p:inputText id="pcutaneo" value="#{controllerDiabetes.model.pliegue_cutaneo}"/>
+                    <p:inputText id="pcutaneo" value="#{controllerDiabetes.data.pliegue_cutaneo}"/>
 
                     <p:outputLabel value="Insulina"/>
-                    <p:inputText id="Insulina" value="#{controllerDiabetes.model.insulina}"/>
+                    <p:inputText id="Insulina" value="#{controllerDiabetes.data.insulina}"/>
 
                     <p:outputLabel value="IMC"/>
-                    <p:inputText id="IMC" value="#{controllerDiabetes.model.indice_de_masa_corporal}"/>
+                    <p:inputText id="IMC" value="#{controllerDiabetes.data.indice_de_masa_corporal}"/>
 
                     <p:outputLabel value="P. diabetes"/>
-                    <p:inputText id="pdiabetes" value="#{controllerDiabetes.model.pedigri_diabetes}"/>
+                    <p:inputText id="pdiabetes" value="#{controllerDiabetes.data.pedigri_diabetes}"/>
 
                     <p:outputLabel value="Edad"/>
-                    <p:inputText id="Edad" value="#{controllerDiabetes.model.edad}"/>
+                    <p:inputText id="Edad" value="#{controllerDiabetes.data.edad}"/>
                    
                     
                     <p:outputLabel value="Mes"/>
-                    <p:inputText id="Mes" value="#{controllerDiabetes.model.f_de_diagnostico_month}"/>
+                    <p:inputText id="Mes" value="#{controllerDiabetes.data.f_de_diagnostico_month}"/>
 
                     <p:outputLabel value="DiaMes"/>
-                    <p:inputText id="DiaMes" value="#{controllerDiabetes.model.f_diagnostico_day_of_month}"/>
+                    <p:inputText id="DiaMes" value="#{controllerDiabetes.data.f_diagnostico_day_of_month}"/>
 
                     <p:outputLabel value="DiaSemana"/>
-                    <p:inputText id="DiaSemana" value="#{controllerDiabetes.model.f_diagnóstico_day_of_week}"/>
+                    <p:inputText id="DiaSemana" value="#{controllerDiabetes.data.f_diagnóstico_day_of_week}"/>
                     
                 </h:panelGrid>
-
-                <p:commandButton value="Predecir" actionListener="#{controllerDiabetes.obtener()}" update="prediccion"/>
+                
+                <p:commandButton value="Predecir" actionListener="#{controllerDiabetes.predecir()}" update="messages"/>
             </h:form>
         </center>
     </h:body>
