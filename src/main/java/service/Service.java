@@ -31,9 +31,9 @@ public class Service {
         OkHttpClient client = new OkHttpClient().newBuilder()
                 .build();
         MediaType mediaType = MediaType.parse("application/json");
-        RequestBody body = RequestBody.create(mediaType, "{\r\n    \"model\": \"model/5f4f1df6ace11f74d70015c1\",\r\n    \"input_data\": {\r\n        \"embarazos\": 8.0,\r\n        \"glucosa\": 63.0,\r\n        \"presion_sanguinea\": 69.0,\r\n        \"pliegue_cutaneo\": 20.0,\r\n        \"insulina\": 81.0,\r\n        \"indice_de_masa_corporal\": 168.0,\r\n        \"pedigri_diabetes\": 429.0,\r\n        \"edad\": 50.0,\r\n        \"f_de_diagnostico_month\": \"3\",\r\n        \"f_diagnostico_day_of_month\": 22.0,\r\n        \"f_diagnóstico_day_of_week\": \"1\"\r\n    }\r\n}");
+        RequestBody body = RequestBody.create(mediaType, "{\r\n    \"model\": \"model/5f52ac1b0d052e40ea0002b6\",\r\n    \"input_data\": {\r\n        \"embarazos\": 8.0,\r\n        \"glucosa\": 63.0,\r\n        \"presion_sanguinea\": 69.0,\r\n        \"pliegue_cutaneo\": 50.0,\r\n        \"insulina\": 91.0,\r\n        \"indice_de_masa_corporal\": 168.0,\r\n        \"pedigri_diabetes\": 429.0,\r\n        \"edad\": 50.0,\r\n        \"f_de_diagnostico_month\": \"3\",\r\n        \"f_diagnostico_day_of_month\": 22.0,\r\n        \"f_diagnóstico_day_of_week\": \"1\"\r\n    }\r\n}");
         Request request = new Request.Builder()
-                .url("http://localhost:8085/predecir")
+                .url("https://bigml.io/andromeda/prediction?username=marcosalarcon;api_key=7081e0eeee307b313644781c3e6859290fe11479")
                 .method("POST", body)
                 .addHeader("Content-Type", "application/json")
                 .build();
@@ -47,8 +47,8 @@ public class Service {
         JSONObject xd = jsonObject.getJSONObject("Results")
                 .getJSONArray("Predicción ")
                 .getJSONObject(0);
-        
+
         return xd;
     }
-    
+
 }

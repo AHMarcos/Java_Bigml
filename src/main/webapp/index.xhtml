@@ -1,0 +1,59 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui">
+    <h:head>
+        <title>Facelet Title</title>
+    </h:head>
+    <h:body>
+        <center>
+            <h2 style="margin-top:0">
+                PREDICCIÓN DE DIABETES
+            </h2>
+            <h:form id="prediccion">
+                <p:growl life="1000" showDetail="true" id="messages"/>
+                <h:panelGrid  columns="2" style="margin-bottom: 10px">
+
+                    <p:outputLabel value="Embarazos"/>
+                    <p:inputText id="Embarazos" value="#{controllerDiabetes.model.embarazos}"/>
+
+                    <p:outputLabel value="Glucosa"/>
+                    <p:inputText id="Glucosa" value="#{controllerDiabetes.model.glucosa}"/>
+
+                    <p:outputLabel value="P. sanguinea"/>
+                    <p:inputText id="psanguinea" value="#{controllerDiabetes.model.presion_sanguinea}"/>
+
+                    <p:outputLabel value="P. cutaneo"/>
+                    <p:inputText id="pcutaneo" value="#{controllerDiabetes.model.pliegue_cutaneo}"/>
+
+                    <p:outputLabel value="Insulina"/>
+                    <p:inputText id="Insulina" value="#{controllerDiabetes.model.insulina}"/>
+
+                    <p:outputLabel value="IMC"/>
+                    <p:inputText id="IMC" value="#{controllerDiabetes.model.indice_de_masa_corporal}"/>
+
+                    <p:outputLabel value="P. diabetes"/>
+                    <p:inputText id="pdiabetes" value="#{controllerDiabetes.model.pedigri_diabetes}"/>
+
+                    <p:outputLabel value="Edad"/>
+                    <p:inputText id="Edad" value="#{controllerDiabetes.model.edad}"/>
+                   
+                    
+                    <p:outputLabel value="Mes"/>
+                    <p:inputText id="Mes" value="#{controllerDiabetes.model.f_de_diagnostico_month}"/>
+
+                    <p:outputLabel value="DiaMes"/>
+                    <p:inputText id="DiaMes" value="#{controllerDiabetes.model.f_diagnostico_day_of_month}"/>
+
+                    <p:outputLabel value="DiaSemana"/>
+                    <p:inputText id="DiaSemana" value="#{controllerDiabetes.model.f_diagnóstico_day_of_week}"/>
+                    
+                </h:panelGrid>
+
+                <p:commandButton value="Predecir" actionListener="#{controllerDiabetes.obtener()}" update="prediccion"/>
+            </h:form>
+        </center>
+    </h:body>
+</html>
